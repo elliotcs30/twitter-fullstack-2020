@@ -7,6 +7,9 @@ const adminController = {
   },
   usersPage: (req, res) => {
     res.render('admin/users')
+  },
+  tweetsPage: (req, res) => {
+    res.render('admin/tweets')
   }
 }
 
