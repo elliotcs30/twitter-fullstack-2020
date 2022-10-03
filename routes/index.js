@@ -7,6 +7,7 @@ const userController = require('../controllers/user-controller')
 
 router.use('/admin', admin)
 router.get('/signup', userController.signUpPage)
+router.get('/signin', userController.signInPage)
 router.get('/twitters', twitterController.getTwitters)
 router.use('/', (req, res) => res.redirect('/twitters'))
 
