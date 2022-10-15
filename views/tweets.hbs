@@ -8,11 +8,11 @@
         data-bs-target="#tweet-modal">
         <div class="card-image m-3">
           {{#if user.avatar}}
-            <img src="{{user.avatar}}" class="user-photo" class="user-avatar"
-              style="width:50px;height:50px;border-radius:50%;">
+          <img src="{{user.avatar}}" class="user-photo" class="user-avatar"
+            style="width:50px;height:50px;border-radius:50%;">
           {{else}}
-            <img src="/images/icon/user.png" class="user-photo" class="user-avatar"
-              style="width:50px;height:50px;border-radius:50%;">
+          <img src="/images/icon/user.png" class="user-photo" class="user-avatar"
+            style="width:50px;height:50px;border-radius:50%;">
           {{/if}}
           <span style="color:#6C757D;font-size: 18px;margin:8px;">有什麼新鮮事？</span>
         </div>
@@ -24,22 +24,22 @@
     </div>
     <div>
       {{#each tweets}}
-        {{>tweet route='tweets'}}
+      {{>tweet route='tweets'}}
       {{/each}}
     </div>
   </div>
   {{!-- pagination --}}
-  <nav aria-label="Page navigation example">
+  <nav class="m-3" aria-label="Page navigation example">
     <ul class="pagination justify-content-center">
       <li class="page-item {{#ifCond pagination.currentPage 1}}disabled{{/ifCond}}">
         <a class="page-link" href="/admin/tweets?page={{pagination.prev}}">Previous</a>
       </li>
       {{#each pagination.pages}}
-        {{#ifCond this ../pagination.currentPage}}
-          <li class="page-item"><a class="page-link" href="#">{{this}}</a></li>
+      {{#ifCond this ../pagination.currentPage}}
+      <li class="page-item"><a class="page-link" href="#">{{this}}</a></li>
       {{else}}
-        <li class="page-item"><a class="page-link" href="/tweets?page={{this}}">{{this}}</a></li>
-        {{/ifCond}}
+      <li class="page-item"><a class="page-link" href="/tweets?page={{this}}">{{this}}</a></li>
+      {{/ifCond}}
       {{/each}}
       <li class="page-item {{#ifCond pagination.currentPage pagination.totalPage}}disabled{{/ifCond}}">
         <a class="page-link " href="/tweets?page={{pagination.next}}">Next</a>
@@ -61,9 +61,9 @@
         <div class="modal-body d-flex flex-column">
           <div>
             {{#if user.avatar}}
-              <img src="{{user.avatar}}" class="bi pe-none me-2" style="width:50px;height:50px;border-radius:50%;">
+            <img src="{{user.avatar}}" class="bi pe-none me-2" style="width:50px;height:50px;border-radius:50%;">
             {{else}}
-              <img src="/images/avatar.png" class="bi pe-none me-2" style="width:50px;height:50px;border-radius:50%;">
+            <img src="/images/avatar.png" class="bi pe-none me-2" style="width:50px;height:50px;border-radius:50%;">
             {{/if}}
             <textarea class=" form" id="description" name="description" rows="4" maxlength="140" placeholder="有什麼新鮮事？"
               style="border:none; width:600px; top:10px;resize:none;height:250px;" oninput="counts()"
@@ -85,25 +85,25 @@
 </div>
 {{!-- tweet Modal end --}}
 <script>
-  function counts () {
-    const counts = document.getElementById( 'description' ).value.length
-    const insertEmptyMessage = document.getElementById( 'insertEmptyMessage' )
-    document.getElementById( 'char_count' ).innerText = counts + '/140'
-    if ( counts > 140 ) {
+  function counts() {
+    const counts = document.getElementById('description').value.length
+    const insertEmptyMessage = document.getElementById('insertEmptyMessage')
+    document.getElementById('char_count').innerText = counts + '/140'
+    if (counts > 140) {
       insertEmptyMessage.innerText = '字數超出上限！'
       return
     }
-    if ( counts > 0 && counts <= 140 ) {
+    if (counts > 0 && counts <= 140) {
       insertEmptyMessage.innerText = ''
     }
-    if ( counts === 0 ) {
+    if (counts === 0) {
       insertEmptyMessage.innerText = '內容不可空白'
     }
   }
-  function checkCount () {
-    const counts = document.getElementById( 'description' ).value.length
-    if ( counts > 140 ) {
-      alert( '字數超出上限！' )
+  function checkCount() {
+    const counts = document.getElementById('description').value.length
+    if (counts > 140) {
+      alert('字數超出上限！')
       return false
     }
   }
