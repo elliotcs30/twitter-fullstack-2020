@@ -4,11 +4,11 @@
     style="height:140px;transition: opacity 0.5s; opacity:0;" onload="this.style.opacity=1;" />
   {{!-- avatar --}}
   {{#if this.avatar}}
-  <img src="{{this.avatar}}" class="border border-4  border-light rounded-circle" width="100px" height="100px"
+  <img src="{{this.avatar}}" class="border border-4  border-light rounded-circle" width="100px;" height="100px;"
     style="transition: opacity 0.5s; opacity:0; margin-top: -80px;margin-left:50px; z-index: 1;"
     onload="this.style.opacity=1;" />
   {{else}}
-  <img src="/images/avatar.png" class="border border-4  border-light rounded-circle" width="100px" height="100px"
+  <img src="/images/avatar.png" class="border border-4  border-light rounded-circle" width="100px;" height="100px;"
     style="transition: opacity 0.5s; opacity:0; margin-top: -80px;margin-left:50px; z-index: 1;"
     onload="this.style.opacity=1;" />
   {{/if}}
@@ -18,7 +18,7 @@
     </p>
     <p class="card-text text-secondary fw-bold">@{{this.account}}</p>
     <p>
-      <img src="../../images/tweet.png" alt="tweets icon" style="width: 21px; height: 21px;">
+      <img src="../../images/tweet.png" alt="tweets icon" style="width: 21px;height: 21px;">
       <span>{{this.tweetCounts}}</span>
       <i class="far fa-heart text-secondary ms-3 me-2"></i><span>{{this.likeCounts}}</span>
     </p>

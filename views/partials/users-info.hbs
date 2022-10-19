@@ -3,23 +3,23 @@
   <img id="profile-cover" src="{{#if user.cover}}{{user.cover}}{{else}}/images/defaultCover.jpg{{/if}}"
     class="card-img-top position-relative" alt="cover"
     style="width:100%; height:200px; filter:brightness(60%);opacity: 0.75;">
-  <div class="image position-absolute" style="top:180px; margin:16px">
+  <div class="image position-absolute" style="top:180px; margin:16px;">
     <a href="/users/{{user.id}}/tweets">
       {{#if user.avatar}}
       <img src="{{user.avatar}}" alt="logo" class="avatar"
-        style="width:140px;height:140px;border-radius:50%;border:4px solid white">
+        style="width:140px;height:140px;border-radius:50%;border:4px solid white;">
       {{else}}
       <img src="/images/avatar.png" id="profile-avatar" alt="logo" class="avatar"
-        style="width:140px;height:140px;border-radius:50%;border:4px solid white">
+        style="width:140px;height:140px;border-radius:50%;border:4px solid white;">
       {{/if}}
     </a>
   </div>
 </div>
 <div class="editprofile d-flex justify-content-end m-3" data-bs-toggle="modal" data-bs-target="#edit-modal">
   <button type="submit" class="btn btn-primary" id="edit-btn" data-target=".bd-example-modal-lg"
-    style="color: #ff6600;font-size: 16px;background-color:white;border: 1px solid #FF6600;border-radius:20px; width:128px;height:40px">編輯個人資料</button>
+    style="color: #ff6600;font-size: 16px;background-color:white;border: 1px solid #FF6600;border-radius:20px; width:128px;height:40px;">編輯個人資料</button>
 </div>
-<div class="card-body" style="margin-top:8px">
+<div class="card-body" style="margin-top:8px;">
   <p class="user-name m-0 " style="color: #171725;font-size: 18px;">
     <strong>{{user.name}}</strong>
   </p>
@@ -53,10 +53,10 @@
     <a href="/users/{{personal.id}}/tweets">
       {{#if personal.avatar}}
       <img src="{{personal.avatar}}" alt="logo" class="avatar"
-        style="width:140px;height:140px;border-radius:50%;border:4px solid white">
+        style="width:140px;height:140px;border-radius:50%;border:4px solid white;">
       {{else}}
       <img src="/images/avatar.png" id="profile-avatar" alt="logo" class="avatar"
-        style="width:140px;height:140px;border-radius:50%;border:4px solid white">
+        style="width:140px;height:140px;border-radius:50%;border:4px solid white;">
       {{/if}}
     </a>
   </div>
@@ -65,17 +65,17 @@
   {{#if user.isFollowed}}
   <form action="/followships/{{personal.id}}?_method=DELETE" method="POST">
     <button type="submit" class="btn btn-primary" id="edit-btn" data-target=".bd-example-modal-lg"
-      style="color: white;font-size: 16px;background-color:#ff6600;border: 1px solid #FF6600;border-radius:20px; width:128px;height:40px">正在跟隨</button>
+      style="color: white;font-size: 16px;background-color:#ff6600;border: 1px solid #FF6600;border-radius:20px; width:128px;height:40px;">正在跟隨</button>
   </form>
   {{else}}
   <form action="/followships" method="POST">
-    <input type="text" name="id" value="{{personal.id}}" style="display: none">
+    <input type="text" name="id" value="{{personal.id}}" style="display: none;">
     <button type=" submit" class="btn btn-primary" id="edit-btn"
       style="color: #ff6600;font-size: 16px;background-color:white;border: 1px solid #FF6600;border-radius:20px; width:96px;height:40px;">跟隨</button>
   </form>
   {{/if}}
 </div>
-<div class="card-body" style="margin-top:8px">
+<div class="card-body" style="margin-top:8px;">
   <p class="user-name m-0" style="color: #171725;font-size: 18px;">
     <strong>{{personal.name}}</strong>
   </p>
@@ -178,7 +178,7 @@
           <div class="modal-body d-flex justify-content-start">
             <button type="button" class="btn-close m-0" id="modal-close-btn" data-bs-dismiss="modal"
               aria-label="Close"></button>
-            <h5 class="modal-title" id="edit-modal-label" style="margin-left:36px">編輯個人資料</h5>
+            <h5 class="modal-title" id="edit-modal-label" style="margin-left:36px;">編輯個人資料</h5>
           </div>
           <button type="submit" class="btn btn-primary" id="save-btn"
             style="color: white;font-size: 16px;background-color:#ff6600;border: 1px solid #FF6600;border-radius:20px;width:64px;height:40px;margin-left:24px;">儲存</button>
@@ -216,14 +216,14 @@
             value="{{user.name}}" style="background-color:#F5F8FA; border-bottom: 2px solid #657786;height:54px;"
             oninput="counts()" maxlength='50' required autofocus>
           <label for="name">請輸入名稱</label>
-          <div class="text-end" id="char_count_name" style="font-size:12px"><span>0/50</span></div>
+          <div class="text-end" id="char_count_name" style="font-size:12px;"><span>0/50</span></div>
         </div>
         <div class="form-group form-floating m-3">
           <textarea type="text" name="introduction" id="introduction" class="form-control font-weight-bold m-auto"
             placeholder="請輸入自我介紹" style="background-color:#F5F8FA; border-bottom: 2px solid #657786;height:147px;"
             maxlength="160" oninput="counts()" required autofocus>{{user.introduction}}</textarea>
           <label for="introduction">自我介紹</label>
-          <div class="text-end" id="char_count_intro" style="font-size:12px"><span>0/160</span></div>
+          <div class="text-end" id="char_count_intro" style="font-size:12px;"><span>0/160</span></div>
           </div>
         </div>
       </div>
