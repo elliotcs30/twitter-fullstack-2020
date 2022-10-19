@@ -15,8 +15,8 @@
           </a>
         </div>
         <div class="col-md-10">
-          <div class="card-body" style="margin:8px">
-            <a href="/users/{{tweet.User.id}}/tweets" style="text-decoration: none;color: black">
+          <div class="card-body" style="margin:8px;">
+            <a href="/users/{{tweet.User.id}}/tweets" style="text-decoration: none;color: black;">
               <h5 class="card-text">{{tweet.User.name}}
                 <span class="fs-6 fw-lighter mr-1">@{{tweet.User.account}}．{{relativeTimeFromNow
                   tweet.createdAt}}</span>
@@ -33,7 +33,7 @@
                 <span>{{tweet.Likes.length}}</span>
                 <span>喜歡的次數</span>
               </small>
-            <form action="/tweets/{{tweet.id}}/replies" method="GET" style="display:inline">
+            <form action="/tweets/{{tweet.id}}/replies" method="GET" style="display:inline;">
               <small class="text-muted">
                 <button class="me-5" type="submit" style="border:none;background: none;">
                   <a href="" data-bs-toggle="modal" data-bs-target="#replyModal">
@@ -44,7 +44,7 @@
               </small>
             </form>
             {{#if user.isLiked}}
-              <form action="/tweets/{{tweet.id}}/unlike" method="POST" style="display: inline">
+              <form action="/tweets/{{tweet.id}}/unlike" method="POST" style="display: inline;">
                 <small class="text-muted">
                   <button type="submit" style="border:none;background: none;">
                     <img src="/images/icon/like.png">
@@ -52,7 +52,7 @@
                 </small>
               </form>
             {{else}}
-              <form action="/tweets/{{tweet.id}}/like" method="POST" style="display: inline">
+              <form action="/tweets/{{tweet.id}}/like" method="POST" style="display: inline;">
                 <small class="text-muted">
                   <button type="submit" style="border:none;background: none;">
                     <img src="/images/icon/unlike.png">
@@ -74,28 +74,28 @@
 {{!-- Modal --}}
 <div class="modal fade" id="replyModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
-    <div class="modal-content" style="height:500px">
-      <div class="modal-header d-flex justify-content-start" style=" margin:0px">
+    <div class="modal-content" style="height:500px;">
+      <div class="modal-header d-flex justify-content-start" style="margin:0px;">
         <div>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
       </div>
-      <div class="modal-body row mt-3" style=" margin-top:0px; top:0px">
-        <div class="col-2 " style="height:200px">
+      <div class="modal-body row mt-3" style="margin-top:0px; top:0px;">
+        <div class="col-2" style="height:200px;">
           {{#if this.User.avatar}}
           <img src="{{this.User.avatar}}" class="img-fluid rounded-circle" alt="User Photo" style="width: 50px; height: 50px;">
           {{else}}
           <img src="/images/avatar.png" class="img-fluid rounded-circle" alt="User Photo" style="width: 50px; height: 50px;">
           {{/if}}
         </div>
-        <div class="col px-0" style="max-width: 80%;height:200px">
+        <div class="col px-0" style="max-width: 80%;height:200px;">
           <span class="fw-bold fs-6">{{tweet.User.name}}</span><small>-@{{tweet.User.account}} ‧
           </small><span>{{relativeTimeFromNow tweet.updatedAt}}</span>
           <br />
           <p class="my-2" style="word-wrap: break-word; word-break: normal;">{{tweet.description}}</p>
-          <small>回覆給<span style="color:#FF6600">@{{tweet.User.account}}</span></small>
+          <small>回覆給<span style="color:#FF6600;">@{{tweet.User.account}}</span></small>
         </div>
-        <form action="/tweets/{{tweet.id}}/replies" method="POST" style="border-top:1px solid #E6ECF0 ;">
+        <form action="/tweets/{{tweet.id}}/replies" method="POST" style="border-top:1px solid #E6ECF0;">
           <div class="row mt-3">
             <div class="col-2 me-0">
               {{#if user.avatar}}
@@ -120,8 +120,9 @@
               </div>
               <div id="repliesCharCount" style="display:inline;"><span>0/140</span></div>
 
-              <button type="submit" class="btn"
-                style="color: white;font-size: 16px;background-color:#ff6600;border: 1px solid #FF6600;border-radius:20px; width:96px;height:40px;margin-left:24px;">回覆</button>
+              <button type="submit" class="btn" style="color: white;font-size: 16px;background-color:#ff6600;border: 1px solid #FF6600;border-radius:20px; width:96px;height:40px;margin-left:24px;">
+                回覆
+              </button>
             </div>
             
           </div>
