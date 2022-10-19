@@ -9,7 +9,7 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
 
-    static associate (models) {
+    static associate(models) {
       User.hasMany(models.Reply)
       User.hasMany(models.Tweet)
       User.hasMany(models.Like)
@@ -24,6 +24,7 @@ module.exports = (sequelize, DataTypes) => {
         as: 'Followings'
       })
       User.hasMany(models.Followship, { foreignKey: 'followingId' })
+      User.hasMany(models.Chatpublic)
     }
   }
   User.init({

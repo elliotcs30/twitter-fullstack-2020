@@ -38,8 +38,18 @@ app.use((req, res, next) => {
   next()
 })
 
+const http = require('http')
+const server = http.createServer(app)
+const { Server } = require('socket.io')
+const io = new Server(server)
+io.on('connection', socket => {
+  socket.on('chat message', msg => {
+    io.emit('chat message', msg)
+  })
+})
+
 app.use(routes)
 
-app.listen(port, () => console.log(`Example app listening on port ${port}!`))
+server.listen(port, () => console.log(`Example app listening on port ${port}!`))
 
 module.exports = app

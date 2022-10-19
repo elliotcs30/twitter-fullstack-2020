@@ -12,6 +12,7 @@ const userController = require('../controllers/user-controller')
 const passport = require('../config/passport')
 const admin = require('./modules/admin')
 const users = require('./modules/users')
+const chat = require('./modules/chat')
 const upload = require('../middleware/multer')
 
 router.get('/signup', userController.signUpPage)
@@ -42,6 +43,7 @@ router.post('/api/users/:id', authenticatedLimit, upload.fields([
 
 router.use('/admin', admin)
 router.use('/users', authenticated, getRecommendedUsers, users)
+router.use('/chat', authenticated, getRecommendedUsers, chat)
 
 router.use('/', (req, res) => res.redirect('/tweets'))
 router.use('/', generalErrorHandler)
