@@ -48,6 +48,7 @@ ALPHA Camp | 學期 3 | Simple Twitter | 自動化測試檔 (全端開發組)
   
   create database ac_twitter_workspace;
   create database ac_twitter_workspace_test;
+  create database ac_twitter_chatroom; // challenge
 ```
 
 3. windows environment need install file
@@ -101,3 +102,10 @@ ALPHA Camp | 學期 3 | Simple Twitter | 自動化測試檔 (全端開發組)
 ```shell
   feature/chatroom
 ```
+
+### Collaborators
+|    name    | account |
+| ---------- | ------- | 
+| Elliot | https://github.com/elliotcs30 |
+| Allen  | https://github.com/AllenliIE | 
+| Kris | https://github.com/Kris3131 | 
