@@ -8,6 +8,7 @@ const passport = require('./config/passport')
 const flash = require('connect-flash')
 const path = require('path')
 const routes = require('./routes')
+const { wrap } = require('./sockets/modules/socket')
 
 // const { getUser } = require('./controllers/user-controller')
 const app = express()
@@ -45,6 +46,7 @@ const io = require('socket.io')(http)
 
 app.use(routes)
 
+io.use(wrap(passport.initialize()))
 require('./sockets')(io)
 http.listen(port, () => console.log(`Example app listening on port ${port}!`))
 

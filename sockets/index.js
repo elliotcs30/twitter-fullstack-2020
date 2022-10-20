@@ -1,10 +1,11 @@
+
 module.exports = io => {
   io.on('connection', socket => {
     console.log(`a user connected (id: ${socket.id})`)
 
-    socket.on('chat', message => {
+    socket.on('public-message', message => {
       console.log(socket.id, ': ', message)
-      io.emit('chat', socket.id, message)
+      io.emit('public-message', socket.id, message)
     })
 
     socket.on('private-message', (anotherSocketId, message) => {
