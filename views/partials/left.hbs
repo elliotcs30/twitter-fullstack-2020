@@ -4,44 +4,44 @@
       <div class="col side-bar-left-top" style="width:178px;height:58px;">
         <div class="link-group m-3">
           <a href="/">
-            <img src="/images/logo.svg" alt="logo" style="width:40px;height:40px">
+            <img src="/images/logo.svg" alt="logo" style="width:40px;height:40px;">
           </a>
         </div>
         <div class="link-group m-3">
           {{#ifCond route 'tweets'}}
-          <img src="/images/home-click.svg" alt="home-click" class="icon m-2" style="width:24px;height:24px">
+          <img src="/images/home-click.svg" alt="home-click" class="icon m-2" style="width:24px;height:24px;">
           {{else}}
-          <img src="/images/home.svg" alt="home" class="icon m-2" style="width:24px;height:24px">
+          <img src="/images/home.svg" alt="home" class="icon m-2" style="width:24px;height:24px;">
           {{/ifCond}}
           <a href="/" class="m-2 text-decoration-none"
-            style="color:{{#ifCond route 'tweets'}} #ff6600 {{else}} #44444F {{/ifCond}};font-size: 18px">首頁</a>
+            style="color:{{#ifCond route 'tweets'}} #ff6600 {{else}} #44444F {{/ifCond}};font-size: 18px;">首頁</a>
         </div>
         <div class="link-group m-3">
           {{#ifCond route 'profile'}}
-          <img src="/images/user-click.svg" alt="user-click" class="icon m-2" style="width:24px;height:24px">
+          <img src="/images/user-click.svg" alt="user-click" class="icon m-2" style="width:24px;height:24px;">
           {{else}}
-          <img src="/images/user.svg" alt="user" class="icon m-2" style="width:24px;height:24px">
+          <img src="/images/user.svg" alt="user" class="icon m-2" style="width:24px;height:24px;">
           {{/ifCond}}
           <a href="/users/{{user.id}}/tweets" class="m-2 text-decoration-none"
-            style="color:{{#ifCond route 'profile'}} #ff6600 {{else}} #44444F {{/ifCond}};font-size: 18px">個人資料</a>
+            style="color:{{#ifCond route 'profile'}} #ff6600 {{else}} #44444F {{/ifCond}};font-size: 18px;">個人資料</a>
         </div>
         <div class="link-group m-3">
           {{#ifCond route 'setting'}}
-          <img src="/images/setting-click.png" alt="setting" class="icon m-2" style="width:24px;height:24px">
+          <img src="/images/setting-click.png" alt="setting" class="icon m-2" style="width:24px;height:24px;">
           {{else}}
-          <img src="/images/setting.svg" alt="setting" class="icon m-2" style="width:24px;height:24px">
+          <img src="/images/setting.svg" alt="setting" class="icon m-2" style="width:24px;height:24px;">
           {{/ifCond}}
           <a href="/users/{{user.id}}/setting" class="m-2 text-decoration-none"
-            style="color:{{#ifCond route 'setting'}} #ff6600 {{else}} #44444F {{/ifCond}};font-size: 18px">設定</a>
+            style="color:{{#ifCond route 'setting'}} #ff6600 {{else}} #44444F {{/ifCond}};font-size: 18px;">設定</a>
         </div>
         <div class="mb-4 text-center m-3" data-bs-toggle="modal" data-bs-target="#tweet-modal">
           <button class="btn col-sm-2 m-2" type="submit"
-            style="color: white;background-color:#ff6600;border-radius: 20px;width:178px;height:46px">推文</button>
+            style="color: white;background-color:#ff6600;border-radius: 20px;width:178px;height:46px;">推文</button>
         </div>
       </div>
       <div class="link-group m-2">
-        <img src="/images/logout.svg" alt="" class="icon m-2" style="width:24px;height:24px">
-        <a href="/logout" class="m-2 text-decoration-none" style="color: #44444f;font-size: 18px">登出</a>
+        <img src="/images/logout.svg" alt="" class="icon m-2" style="width:24px;height:24px;">
+        <a href="/logout" class="m-2 text-decoration-none" style="color: #44444f;font-size: 18px;">登出</a>
       </div>
     </div>
   </nav>
@@ -49,8 +49,8 @@
 {{!-- tweet Modal --}}
 <div class="modal fade" id="tweet-modal" tabindex="-1" aria-labelledby="tweet-modal" aria-hidden="true">
   <div class="modal-dialog modal-lg" style="width:639px; position:relative; right:40px;">
-    <div class="modal-content" style="border-radius:16px">
-      <div class="" style="">
+    <div class="modal-content" style="border-radius:16px;">
+      <div>
         <label for="description" class="form-label">
         </label>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
